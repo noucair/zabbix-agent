@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Stop service zabbix-agent
+      systemd:
+          name: zabbix-agent
+          state: stopped
+
+    - name: Start service zabbix-agent2
+      systemd:
+          name: zabbix-agent2
+          state: started
